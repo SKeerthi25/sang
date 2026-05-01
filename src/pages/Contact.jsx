@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
+import PageHero from "../components/PageHero";
+
 export default function Contact() {
   const form = useRef();
   const [status, setStatus] = useState('');
@@ -26,25 +28,15 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-white min-h-screen pt-24 pb-20 relative">
-      {" "}
-      <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none" />{" "}
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        {" "}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          {" "}
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
-            Contact Sales
-          </h1>{" "}
-          <p className="text-lg text-gray-500">
-            Have a question or need to place a bulk order? Reach out to our
-            team.
-          </p>{" "}
-        </motion.div>{" "}
+    <div className="min-h-screen w-full bg-slate-50">
+      <PageHero title="Contact Sales" subtitle="Get In Touch" bgImage="/contact_bg.png" />
+      <section className="bg-white text-gray-900 relative z-30 py-20 px-4 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-lg text-gray-500">
+              Have a question or need to place a bulk order? Reach out to our team.
+            </p>
+          </div>
         <div className="grid lg:grid-cols-5 gap-12 max-w-6xl mx-auto">
           {" "}
           {/* Contact Info */}{" "}
@@ -222,7 +214,8 @@ export default function Contact() {
             title="SANG LTD Location Map"
           ></iframe>
         </motion.div>
-      </div>{" "}
+        </div>
+      </section>
     </div>
   );
 }

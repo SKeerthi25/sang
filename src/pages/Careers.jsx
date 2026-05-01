@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Briefcase, MapPin, Code, Server, Headset } from "lucide-react";
+import PageHero from "../components/PageHero";
+import { Link } from "react-router-dom";
 
 export default function Careers() {
   const jobs = [
@@ -15,13 +17,15 @@ export default function Careers() {
   ];
 
   return (
-    <div className="bg-white min-h-screen overflow-hidden pt-24 pb-20 relative">
-      <div className="absolute top-[-10%] left-[-5%] w-[40vw] h-[40vw] bg-pink-500/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="container mx-auto px-4 lg:px-8 max-w-4xl relative z-10">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Join Our Team</h1>
-          <p className="text-lg text-gray-500 ">Help us shape the future of technology distribution and software solutions in the UK.</p>
-        </div>
+    <div className="min-h-screen w-full bg-slate-50">
+      <PageHero title="Join Our Team" subtitle="Careers" bgImage="/industries_bg.png" />
+      <section className="bg-white text-gray-900 relative z-30 py-20 px-4 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div className="container mx-auto px-4 lg:px-8 max-w-4xl relative z-10">
+          <div className="text-center mb-16">
+            <p className="text-lg text-gray-500">
+              Help us shape the future of technology distribution and software solutions in the UK.
+            </p>
+          </div>
         <div className="space-y-4">
           {jobs.map((job, i) => (
             <motion.div
@@ -47,13 +51,30 @@ export default function Careers() {
                   </div>
                 </div>
               </div>
-              <button className="px-8 py-3 bg-white border-2 border-gray-200 hover:border-indigo-500 hover:bg-indigo-50 hover:text-indigo-600 text-gray-900 rounded-xl font-bold transition-all w-full md:w-auto">
-                Apply Now
-              </button>
+              <Link to="/contact" className="w-full md:w-auto">
+                <motion.div 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="relative overflow-hidden px-8 py-3 bg-white border-2 border-indigo-100 text-indigo-600 rounded-xl font-bold transition-all w-full md:w-auto group shadow-sm hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] hover:border-transparent flex items-center justify-center"
+                >
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  
+                  {/* Glowing pulse effect */}
+                  <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-30 blur-md transition-opacity duration-500"></span>
+
+                  <span className="relative z-10 flex items-center justify-center gap-2 group-hover:text-white transition-colors duration-300">
+                    Apply Now
+                    <svg className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </span>
+                </motion.div>
+              </Link>
             </motion.div>
           ))}
         </div>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

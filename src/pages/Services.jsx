@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Box, Building2, Truck, Wrench } from "lucide-react";
+import PageHero from "../components/PageHero";
+
 export default function Services() {
   const services = [
     {
@@ -36,28 +38,16 @@ export default function Services() {
     },
   ];
   return (
-    <div className="py-20 bg-white min-h-screen">
-      {" "}
-      <div className="container mx-auto px-4 lg:px-8">
-        {" "}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center max-w-3xl mx-auto mb-20"
-        >
-          {" "}
-          <div className="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full text-sm font-bold mb-6 border border-violet-200 ">
-            {" "}
-            Our Services{" "}
-          </div>{" "}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Comprehensive Tech Solutions
-          </h1>{" "}
-          <p className="text-lg text-gray-500 ">
-            Beyond just supplying hardware, we offer end-to-end logistics and
-            procurement services designed to optimize your operations.
-          </p>{" "}
-        </motion.div>{" "}
+    <div className="min-h-screen w-full bg-slate-50">
+      <PageHero title="Comprehensive Tech Solutions" subtitle="Our Services" bgImage="/products_bg.png" />
+      <section className="bg-white text-gray-900 relative z-30 py-20 px-4 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-lg text-gray-500">
+              Beyond just supplying hardware, we offer end-to-end logistics and
+              procurement services designed to optimize your operations.
+            </p>
+          </div>
         <div className="grid md:grid-cols-2 gap-8">
           {" "}
           {services.map((service, i) => (
@@ -87,7 +77,8 @@ export default function Services() {
             </motion.div>
           ))}{" "}
         </div>{" "}
-      </div>{" "}
+        </div>
+      </section>
     </div>
   );
 }

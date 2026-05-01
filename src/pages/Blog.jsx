@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Calendar, User } from "lucide-react";
+import PageHero from "../components/PageHero";
 
 export default function Blog() {
   const posts = [
@@ -49,13 +50,15 @@ export default function Blog() {
   ];
 
   return (
-    <div className="bg-white min-h-screen overflow-hidden pt-24 pb-20 relative">
-      <div className="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Insights & News</h1>
-          <p className="text-lg text-gray-500 ">Stay updated with the latest trends in technology distribution.</p>
-        </div>
+    <div className="min-h-screen w-full bg-slate-50">
+      <PageHero title="Insights & News" subtitle="Tech Distribution" bgImage="/industries_bg.png" />
+      <section className="bg-white text-gray-900 relative z-30 py-20 px-4 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-lg text-gray-500">
+              Stay updated with the latest trends in technology distribution.
+            </p>
+          </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post, i) => (
@@ -90,7 +93,8 @@ export default function Blog() {
             </motion.div>
           ))}
         </div>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

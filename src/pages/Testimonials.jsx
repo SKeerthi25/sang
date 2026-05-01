@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import PageHero from "../components/PageHero";
+
 export default function Testimonials() {
   const reviews = [
     {
@@ -20,19 +22,15 @@ export default function Testimonials() {
     },
   ];
   return (
-    <div className="py-20 bg-white min-h-screen">
-      {" "}
-      <div className="container mx-auto px-4 lg:px-8">
-        {" "}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          {" "}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Client Testimonials
-          </h1>{" "}
-          <p className="text-lg text-gray-500 ">
-            Hear what our B2B partners have to say about working with us.
-          </p>{" "}
-        </div>{" "}
+    <div className="min-h-screen w-full bg-slate-50">
+      <PageHero title="Client Testimonials" subtitle="Success Stories" bgImage="/contact_bg.png" />
+      <section className="bg-white text-gray-900 relative z-30 py-20 px-4 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-lg text-gray-500">
+              Hear what our B2B partners have to say about working with us.
+            </p>
+          </div>
         <div className="grid md:grid-cols-3 gap-8">
           {" "}
           {reviews.map((rev, i) => (
@@ -76,7 +74,8 @@ export default function Testimonials() {
             </motion.div>
           ))}{" "}
         </div>{" "}
-      </div>{" "}
+        </div>
+      </section>
     </div>
   );
 }

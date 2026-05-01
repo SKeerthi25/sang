@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, Monitor, Cpu, HardDrive, ShoppingCart, Shield, Layout, Database } from "lucide-react";
 
+import PageHero from "../components/PageHero";
+
 const products = [
   { id: 1, name: "Enterprise Server Rack 42U", category: "Computers", price: "£4,500", icon: <HardDrive className="text-indigo-500" /> },
   { id: 2, name: "Business Laptop Pro 15\"", category: "Computers", price: "£1,200", icon: <Cpu className="text-pink-500" /> },
@@ -31,13 +33,10 @@ export default function Products() {
   );
 
   return (
-    <div className="bg-white min-h-screen overflow-hidden pt-24 pb-20 relative">
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Product Catalog</h1>
-          <p className="text-lg text-gray-500">Explore our comprehensive range of high-performance hardware and software solutions.</p>
-        </div>
+    <div className="min-h-screen w-full bg-slate-50">
+      <PageHero title="Product Catalog" subtitle="Hardware & Software" bgImage="/products_bg.png" />
+      <section className="bg-white text-gray-900 relative z-30 py-20 px-4 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div className="container mx-auto lg:px-8 relative z-10">
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
           <div className="flex flex-wrap gap-2 bg-slate-50 p-1 rounded-xl border border-gray-200">
@@ -86,7 +85,8 @@ export default function Products() {
             </motion.div>
           ))}
         </div>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

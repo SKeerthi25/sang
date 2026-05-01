@@ -25,14 +25,23 @@ export default function Layout() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <div className="min-h-screen flex flex-col bg-white transition-colors duration-300">
-      {" "}
-      <Navbar />{" "}
-      <main className="flex-grow pt-20">
-        {" "}
-        <Outlet />{" "}
-      </main>{" "}
-      <Footer /> {/* Floating WhatsApp Button */}{" "}
+    <div className="min-h-screen flex flex-col text-white relative transition-colors duration-300">
+      {/* Fixed Global Background Image */}
+      <div 
+        className="fixed inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/premium_bg.png')" }}
+      />
+      {/* Global Dark Gradient Overlay for readability */}
+      <div className="fixed inset-0 z-0 bg-gray-900/60 bg-gradient-to-b from-gray-900/40 via-gray-900/60 to-gray-900/90" />
+      
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Navbar />{" "}
+        <main className="flex-grow pt-20">
+          {" "}
+          <Outlet />{" "}
+        </main>{" "}
+        <Footer /> {/* Floating WhatsApp Button */}{" "}
+      </div>
       <a
         href="https://wa.me/447884379597"
         target="_blank"

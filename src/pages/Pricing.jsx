@@ -2,23 +2,19 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import PageHero from "../components/PageHero";
+
 export default function Pricing() {
   return (
-    <div className="bg-white min-h-screen pt-24 pb-20 relative overflow-hidden">
-      {" "}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />{" "}
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        {" "}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          {" "}
-          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">
-            Simple, Transparent Pricing
-          </h1>{" "}
-          <p className="text-lg text-gray-500">
-            Choose the corporate tier that fits your procurement volume. No
-            hidden fees.
-          </p>{" "}
-        </div>{" "}
+    <div className="min-h-screen w-full bg-slate-50">
+      <PageHero title="Simple, Transparent Pricing" subtitle="Wholesale Rates" bgImage="/products_bg.png" />
+      <section className="bg-white text-gray-900 relative z-30 py-20 px-4 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-lg text-gray-500">
+              Choose the corporate tier that fits your procurement volume. No hidden fees.
+            </p>
+          </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {" "}
           {/* Tier 1 */}{" "}
@@ -144,7 +140,8 @@ export default function Pricing() {
             </Link>{" "}
           </motion.div>{" "}
         </div>{" "}
-      </div>{" "}
+        </div>
+      </section>
     </div>
   );
 }

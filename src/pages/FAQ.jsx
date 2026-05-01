@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import PageHero from "../components/PageHero";
+
 export default function FAQ() {
   const [open, setOpen] = useState(0);
   const faqs = [
@@ -39,19 +41,15 @@ export default function FAQ() {
     },
   ];
   return (
-    <div className="py-20 bg-white min-h-screen">
-      {" "}
-      <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
-        {" "}
-        <div className="text-center mb-16">
-          {" "}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Frequently Asked Questions
-          </h1>{" "}
-          <p className="text-lg text-gray-500 ">
-            Everything you need to know about partnering with SANG LTD.
-          </p>{" "}
-        </div>{" "}
+    <div className="min-h-screen w-full bg-slate-50">
+      <PageHero title="Frequently Asked Questions" subtitle="Support & Info" bgImage="/contact_bg.png" />
+      <section className="bg-white text-gray-900 relative z-30 py-20 px-4 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div className="container mx-auto px-4 lg:px-8 max-w-3xl">
+          <div className="text-center mb-16">
+            <p className="text-lg text-gray-500">
+              Everything you need to know about partnering with SANG LTD.
+            </p>
+          </div>
         <div className="space-y-4">
           {" "}
           {faqs.map((faq, i) => (
@@ -92,7 +90,8 @@ export default function FAQ() {
             </motion.div>
           ))}{" "}
         </div>{" "}
-      </div>{" "}
+        </div>
+      </section>
     </div>
   );
 }

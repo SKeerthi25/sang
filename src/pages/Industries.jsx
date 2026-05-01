@@ -8,6 +8,8 @@ import {
   Laptop2,
   HeartPulse,
 } from "lucide-react";
+import PageHero from "../components/PageHero";
+
 export default function Industries() {
   const industries = [
     {
@@ -53,20 +55,15 @@ export default function Industries() {
     },
   ];
   return (
-    <div className="py-20 bg-white min-h-screen overflow-hidden">
-      {" "}
-      <div className="container mx-auto px-4 lg:px-8">
-        {" "}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          {" "}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Industries We Serve
-          </h1>{" "}
-          <p className="text-lg text-gray-500 ">
-            Our wholesale technology solutions power growth and efficiency
-            across diverse sectors.
-          </p>{" "}
-        </div>{" "}
+    <div className="min-h-screen w-full bg-slate-50">
+      <PageHero title="Industries We Serve" subtitle="Powering Growth" bgImage="/industries_bg.png" />
+      <section className="bg-white text-gray-900 relative z-30 py-20 px-4 shadow-[0_-10px_40px_rgba(0,0,0,0.1)]">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <p className="text-lg text-gray-500">
+              Our wholesale technology solutions power growth and efficiency across diverse sectors.
+            </p>
+          </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {" "}
           {industries.map((ind, i) => (
@@ -92,7 +89,8 @@ export default function Industries() {
             </motion.div>
           ))}{" "}
         </div>{" "}
-      </div>{" "}
+        </div>
+      </section>
     </div>
   );
 }
